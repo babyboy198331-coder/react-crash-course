@@ -1,18 +1,18 @@
 import './App.css';
 import Todo from './components/Todo.jsx';
  import Title from './components/Title.jsx';
- import Modal from './components/modal.jsx';
+
 
 function App() {
   return (
     <div>
 <Title></Title>
 <div className="Todo__wrapper">
-<Todo />
-<Todo />
-<Todo />
+<Todo title="Finsh Frontend simplified"/>
+<Todo title="Finish Interview Section"/>
+<Todo title="Land a $100k Job"/>
 </div>
-<Modal />
+ {/* <Modal /> */}
     </div>
  
   );
