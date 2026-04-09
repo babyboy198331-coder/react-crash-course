@@ -9,7 +9,9 @@ function App() {
    <div>
 <Title />
 <div>
-  <input type="text"/>
+  <input type="text" onChange={()=> {
+
+  }}/>
   <button>Add Todo</button>
 </div>
 <div className="Todo__wrapper">
@@ -17,7 +19,7 @@ function App() {
 <Todo Title="Finish Interview Section"/>
 <Todo Title="Land a $100k Job"/>
 </div>
- {/* <Modal title="Are you sure you want to delete?"/> */}
+  <Modal title="Are you sure you want to delete?"/>
  
     </div>
  
