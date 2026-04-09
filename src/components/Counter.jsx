@@ -1,34 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function Counter() {
-  const [cart, setCart] = useState({
-    item: 'apple',
-    quantity: 0,
-  });
+const [arr, setArr] = useState([])
 
-  function addApple() {
-    // 1. use a callback function to get the previous value
-    // 2. spread out all the properties of the previous value
-    // 3.only change the property that you need to change
-    setCart(prevCart => ({
-      ...prevCart,
-      quantity: prevCart.quantity + 1,
-    }));
-  }
+function addPlus() {
+setArr(prevArr => [...prevArr, "+"])
+}
 
-  function removeApple() {
-    setCart(prevCart => ({
-      ...prevCart,
-      quantity: prevCart.quantity - 1 
-    }));
-  }
+function addMinus() {
+setArr(prevArr => [...prevArr, "-"])
+}
 
   return (
     <div>
-      <button onClick={removeApple}>-</button>
-      {cart.quantity}
-      {cart.item}
-      <button onClick={addApple}>+</button>
+      <button onClick={addMinus}>-</button>
+      <button onClick={addPlus}>+</button>
     </div>
   );
 }
