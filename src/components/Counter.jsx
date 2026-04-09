@@ -15,6 +15,7 @@ setArr(prevArr => [...prevArr, "-"])
     <div>
       <button onClick={addMinus}>-</button>
       <button onClick={addPlus}>+</button>
+      {arr.toString()}
     </div>
   );
 }
