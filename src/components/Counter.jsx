@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Counter() {
 const [arr, setArr] = useState([])
