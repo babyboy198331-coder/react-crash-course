@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 
 function Counter(){
-    const [counter, setCounter] = useState(0);
-    function incrementCounter() {
-  setCounter((prevCounter) => prevCounter + 1);
-    }
-
-    function decrementCounter() {
- setCounter((prevCounter) => prevCounter - 1);
-    }
+   const [cart, setCart] = useState({item: 'apple', quantity: 10});
     return (
         <div>
 <button onClick={decrementCounter}>-</button>
