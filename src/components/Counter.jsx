@@ -9,14 +9,14 @@ function Counter() {
   function addApple() {
     setCart(prevCart => ({
       ...prevCart,
-      quantity: prevCart.quantity + 1, // ✅ increment properly
+      quantity: prevCart.quantity + 1,
     }));
   }
 
   function removeApple() {
     setCart(prevCart => ({
       ...prevCart,
-      quantity: prevCart.quantity > 0 ? prevCart.quantity - 1 : 0, // ✅ prevent negative
+      quantity: prevCart.quantity > 0 ? prevCart.quantity - 1 : 0, 
     }));
   }
 
