@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 function Counter(){
     const [counter, setCounter] = useState(0);
     function incrementCounter() {
-  setCounter(counter + 1);
+  setCounter((prevCounter) => prevCounter + 1);
     }
 
     function decrementCounter() {
- setCounter(counter - 1);
+ setCounter((prevCounter) => prevCounter - 1);
     }
     return (
         <div>
