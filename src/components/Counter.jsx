@@ -1,14 +1,33 @@
 import React, { useState } from 'react';
 
-function Counter(){
-   const [cart, setCart] = useState({item: 'apple', quantity: 10});
-    return (
-        <div>
-<button onClick={decrementCounter}>-</button>
-{counter}
-<button onClick={incrementCounter}>+</button>
- </div>
-    )
+function Counter() {
+  const [cart, setCart] = useState({
+    item: 'apple',
+    quantity: 0,
+  });
+
+  function addApple() {
+    setCart(prevCart => ({
+      ...prevCart,
+      quantity: prevCart.quantity + 1, // ✅ increment properly
+    }));
+  }
+
+  function removeApple() {
+    setCart(prevCart => ({
+      ...prevCart,
+      quantity: prevCart.quantity > 0 ? prevCart.quantity - 1 : 0, // ✅ prevent negative
+    }));
+  }
+
+  return (
+    <div>
+      <button onClick={removeApple}>-</button>
+      {cart.quantity}
+      {cart.item}
+      <button onClick={addApple}>+</button>
+    </div>
+  );
 }
 
 export default Counter;
