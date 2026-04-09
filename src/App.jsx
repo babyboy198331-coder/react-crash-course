@@ -6,19 +6,19 @@ import Modal from './components/modal.jsx';
 
 function App() {
   return (
-    <div>
-<Title></Title>
+   <div>
+<Title />
+<div>
+  <input type="text"/>
+  <button>Add Todo</button>
+</div>
 <div className="Todo__wrapper">
-<Todo Title="Finsh Frontend simplified"
-      paragraph="Code along with Frontend Simplified step by step" 
-/>
-<Todo Title="Finish Interview Section"
-      paragraph="Finish every interview question in the next 6 wweks" 
-/>
-<Todo Title="Land a $100k Job" paragraph="Apply to 100 jobs"/>
+<Todo Title="Finsh Frontend simplified"/>
+<Todo Title="Finish Interview Section"/>
+<Todo Title="Land a $100k Job"/>
 </div>
  {/* <Modal title="Are you sure you want to delete?"/> */}
- <Modal title="Are you sure you want to Add?"/>
+ 
     </div>
  
   );
