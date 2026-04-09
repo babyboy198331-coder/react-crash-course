@@ -13,7 +13,11 @@ function App() {
     console.log('onTodoDelete()');
   }
 
-  function closeModal() {
+  function cancelModal() {
+    setShowModal(false);
+  }
+
+  function confirmModal() {
     setShowModal(false);
   }
 
@@ -42,7 +46,7 @@ function App() {
       </div>
 
       {showModal && (
-        <Modal title="Confirm Delete?" onClose={closeModal} />
+        <Modal title="Confirm Delete?" onClose={cancelModal} onConfirm={confirmModal} />
       )}
     </div>
   );
