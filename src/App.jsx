@@ -46,7 +46,8 @@ function App() {
       </div>
 
       {showModal && (
-        <Modal title="Confirm Delete?" onClose={cancelModal} onConfirm={confirmModal} />
+        <Modal title="Confirm Delete?" onCancel={cancelModal}
+         onConfirm={confirmModal} />
       )}
     </div>
   );
