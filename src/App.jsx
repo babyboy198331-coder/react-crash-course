@@ -10,21 +10,20 @@ function App() {
 
   function onTodoDelete() {
     setShowModal(true);
-    console.log('onTodoDelete()');
   }
 
-  function cancelModal() {
+  function closeModal() {
     setShowModal(false);
   }
 
   function confirmModal() {
+    console.log('Todo confirmed/deleted');
     setShowModal(false);
   }
 
   return (
     <div>
       <Title />
-
       <Counter />
 
       <div>
@@ -34,6 +33,7 @@ function App() {
             console.log(event.target.value);
           }}
         />
+
         <button onClick={() => setShowModal(true)}>
           Add Todo
         </button>
@@ -46,8 +46,11 @@ function App() {
       </div>
 
       {showModal && (
-        <Modal title="Confirm Delete?" onCancel={cancelModal}
-         onConfirm={confirmModal} />
+        <Modal
+          title="Confirm Delete?"
+          cancelModal={closeModal}
+          confirmModal={confirmModal}
+        />
       )}
     </div>
   );
