@@ -8,6 +8,15 @@ import React, { useState } from 'react';
 function App() {
   const [showModal, setShowModal] = useState(false);
 
+  function onTodoDelete() {
+    setShowModal(true);
+    console.log('onTodoDelete()');
+  }
+
+  function closeModal() {
+    setShowModal(false);
+  }
+
   return (
     <div>
       <Title />
@@ -18,7 +27,7 @@ function App() {
         <input
           type="text"
           onChange={(event) => {
-            // handle input here
+            console.log(event.target.value);
           }}
         />
         <button onClick={() => setShowModal(true)}>
@@ -27,12 +36,14 @@ function App() {
       </div>
 
       <div className="Todo__wrapper">
-        <Todo title="Finish Frontend Simplified" />
-        <Todo title="Finish Interview Section" />
-        <Todo title="Land a $100k Job" />
+        <Todo onTodoDelete={onTodoDelete} title="Finish Frontend Simplified" />
+        <Todo onTodoDelete={onTodoDelete} title="Finish Interview Section" />
+        <Todo onTodoDelete={onTodoDelete} title="Land a $100k Job" />
       </div>
 
-      {showModal && <Modal title="Confirm Delete?" />}
+      {showModal && (
+        <Modal title="Confirm Delete?" onClose={closeModal} />
+      )}
     </div>
   );
 }
