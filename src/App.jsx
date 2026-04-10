@@ -7,6 +7,11 @@ import Contact from './components/Contact';
 function App() {
   return (
     <Router>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/About">About</a>
+        <a href="/Contact">Contact</a>
+      </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
